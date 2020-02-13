@@ -1,0 +1,19 @@
+1.Установить mysql на ПК (name:root  pass:1234) https://info-comp.ru/sisadminst/448-installing-mysql-5-6-23-windows-7.html
+
+2.pip install flask && pip install pymysql && pip install cryptography && pip install flask-socketio
+
+3.создать 2 базы данных:
+
+    CREATE DATABASE users_list;
+        USE users_list;
+            CREATE TABLE users (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name CHAR(25), email CHAR(25), passwd CHAR(25), first_message_in_db INT DEFAULT 0);
+                ALTER TABLE users CONVERT TO CHARACTER SET utf8mb4;
+
+    CREATE DATABASE messages;
+    USE messages;
+    CREATE TABLE message (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, message MEDIUMTEXT, tag CHAR(25), time CHAR(6));
+    ALTER TABLE message CONVERT TO CHARACTER SET utf8mb4;
+
+5. Запустить приложение
+
+6. Список users нужно вынсети в отедльный файл.

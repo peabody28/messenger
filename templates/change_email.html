@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>change my mail</title>
+    <link rel="stylesheet" href="static/change_email.css" type="text/css">
+    <script type=text/javascript src="/static/js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div id="mess"><a id="a_mess" href="{{ url_for('messenger') }}">MessFree</a></div>
+        <div class="login"><h5><a href="{{ url_for('exit')}} ">Выйти</a></h5></div>
+        <div class="uspg"><a id="user_page" href="{{ url_for('user_page') }}">Аккаунт</a></div>
+    </div>
+
+    <div class="content">
+        <form id="form">
+            <label for="email">Новый e-mail</label>&nbsp;&nbsp;
+            <input type="text" name="email">
+            <br>
+            <br>
+            <div id="button"><button id="bt">Изменить</button></div>
+        </form>
+        <br>
+        <br>
+        <div id="message"></div>
+    </div>
+    <script src="static/js/change_email.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>MessFree</title>
+        <script type=text/javascript src="static/js/jquery-3.4.1.js"></script>
+        <script src="static/js/socket.io.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <div id="mess">MessFree</div>
+            <div class="login"><h5><a href="{{ url_for('exit')}} ">Выйти</a></h5></div>
+            <div class="uspg"><a id="user_page" href="{{ url_for('user_page') }}">Аккаунт</a></div>
+        </div>
+
+        <div class="wrapper">
+            <div class="title">Общий чат</div>
+
+            <div class="content">
+                <div class="messenger_window">
+                    <div class="messages">
+                        {% for mes in messages %}
+                            {% if mes["name"]=="system" %}
+                                &nbsp;&nbsp;<i>{{ mes["name"] }}:&nbsp;&nbsp;&nbsp;&nbsp;{{ mes["message"] }}&nbsp;&nbsp;&nbsp;&nbsp;</i><span>{{ mes["time"] }}</span><br>
+                            {% else %}
+                                {{ mes["name"] }}:&nbsp;&nbsp;&nbsp;&nbsp;{{ mes["message"] }}&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ mes["time"] }}</span><br>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <button id="to_down">Вниз</button>
+                    <button id="clear">clear</button>
+                    <div id="err_message"></div>
+                    <div class="lol">
+                        <form id="form">
+                            <input id="inp" type="text" name="text">
+                            <button id="bt">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--<div class="footer">
+            <div id="by">Разработчик: Горбачевский Максим</div>
+        </div>-->
+        <script type="text/javascript" src="static/js/update.js"></script>
+        <link rel="stylesheet" href="static/messenger.css" type="text/css">
+    </body>
+</html>

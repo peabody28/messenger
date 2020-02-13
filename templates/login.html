@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/login.css" type="text/css">
+    <script type=text/javascript src="/static/js/jquery-3.4.1.js"></script>
+    <title>Вход</title>
+</head>
+<body>
+	<div class="form_login">
+    	<form id="form" method="POST">
+			<div class="up">
+				<div class="name">
+					<div class="label_name"><label for="username">Имя</label></div>
+					<div class="input_name"><input type="text" name="username"></div>
+				</div>
+				<br>
+				<div class="pass">
+					<div class="label_pass"><label for="password">Пароль</label></div>
+	    			<div class="input_pass"><input type="password" name="password"></div>
+				</div>
+			</div>
+			<br>
+            <div id="button"><button id="bt">Войти</button></div>
+            <div class="err">
+                <div id="message"></div>
+            </div>
+			<div id="aha"><a href="{{ url_for('signup')}} ">Зарегистрироваться</a></div>
+    	</form>
+	</div>
+    <script src="static/js/login.js"></script>
+</body>
+</html>
